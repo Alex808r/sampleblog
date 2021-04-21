@@ -20,7 +20,7 @@ mb-3 bg-white border-bottom shadow-sm">
       </nav>
       <span class="p-2 text-dark"> <%= link_to "Добавить статью", new_post_path %></span>
       <span class="p-2 text-dark"> <%= link_to "Про нас", about_path %>  </span>
-      <span class="p-2 text-dark"> <%= link_to "Контакты", contacts_path %>  </span>
+      <span class="p-2 text-dark"> <%= link_to "Обратная связь", contacts_path %>  </span>
       <span class="p-2 text-dark">
         <% if user_signed_in? %>
           Hello, <%= current_user.username %> | <%= link_to 'Sign Out!', destroy_user_session_path, method: :delete %>

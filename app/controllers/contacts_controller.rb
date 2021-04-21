@@ -7,7 +7,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.valid? # в контроллере post представлена эквивалентная запись, но короче и удобнее
      @contact.save
-    redirect_to @contact
+    redirect_to contacts_path
     else
       render 'new'
          # если в методе "create" мы бы не написали "render action new",
