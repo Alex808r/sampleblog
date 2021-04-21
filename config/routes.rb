@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get 'contacts' => 'pages#contacts', as: 'contacts'
 
   #пути для контроллера posts
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 
 
 end
