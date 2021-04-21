@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
-  #строчка нужна для авторизации
-
+  #строчка нужна для авторизации без devise
   #http_basic_authenticate_with name: 'admin', password: '123', except: [:index, :show]
 
   def index
@@ -57,7 +56,7 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path
 
-    # "Render" не прерывает запрос текущий, а продолжает его дальше, а "redirect_to" прерывает и отравляет браузер на
+    # "render" не прерывает запрос текущий, а продолжает его дальше, а "redirect_to" прерывает и отравляет браузер на
     # другую страницу. То есть "redirect_to" делает два запроса: прерывает операцию и отправляет браузер
     # на другую страницу, и переменная теряется, а "render" происходит в рамках текущего запроса,
     # не прерывая его,  поэтому сохраняется переменная.
@@ -67,6 +66,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :body)
   end
-
-
 end

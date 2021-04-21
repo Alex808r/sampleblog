@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails приложение Блог. 
+Авторизация пользователя реализована с помощью gem devise.
+Генератор scaffold не использовался. 
+Визуальное оформление bootstrap 4.6.0. https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css
+https://getbootstrap.com/docs/5.0/examples/
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Приложение размещено на heroku: https://vast-ocean-07736.herokuapp.com/
