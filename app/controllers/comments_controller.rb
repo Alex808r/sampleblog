@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   #http_basic_authenticate_with name: 'admin', password: '123'
+  before_action :authenticate_user!, :only => [:create]
 
   def create
     @post = Post.find(params[:post_id])

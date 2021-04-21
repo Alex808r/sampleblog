@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
+
   #строчка нужна для авторизации
+
   #http_basic_authenticate_with name: 'admin', password: '123', except: [:index, :show]
 
   def index
