@@ -13,6 +13,22 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+# метод для редактирования
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  #метод для обновления
+  def update
+    @post = Post.find(params[:id])
+
+    if(@post.update(post_params))
+      redirect_to @post # вызовет метод show и переведет пользователя на новую страницу
+    else
+      render 'edit' # перезагрузка страницы если не прошла валидация
+    end
+  end
+
   def create
     #render plain: params[:post].inspect для проверки вывода информации из формы [:post] - назвние формы
     @post = Post.new(post_params)
@@ -22,7 +38,12 @@ class PostsController < ApplicationController
     else
       render 'new' # перезагрузка страницы если не прошла валидация
     end
+  end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   private
