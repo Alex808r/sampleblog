@@ -1,7 +1,12 @@
-<h1> Все посты </h1>
+<h1> Все статьи </h1>
 
 <% @posts.each do |post| %>
-  <h4><%= post.title %></h4>
-  <p> <%= post.body %></p>
-  <hr/>
+  <div class="alert-alert-light">
+    <h4><%= post.title %></h4>
+    <p> <%= post.body %></p>
+    <%= link_to "Читать далее", post_path(post), :class => 'btn btn-outline-primary' %>
+    <hr/>
+  </div>
 <% end %>
+
+
