@@ -4,12 +4,14 @@ Rails.application.routes.draw do
 
   # путь для отображения страницы about, pages - контроллер, # about метод в этом контроллере
   get 'about' => 'pages#about', as: 'about'
-  get 'contacts' => 'pages#contacts', as: 'contacts'
+  #get 'contacts' => 'pages#contacts', as: 'contacts'
 
   #пути для контроллера posts
   resources :posts do
     resources :comments
   end
+
+  resource :contacts, only: [:new, :create], path_names: {:new => ''} #или get 'contacts' => 'contacts#new'
 
 
 end

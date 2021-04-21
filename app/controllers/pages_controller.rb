@@ -4,9 +4,9 @@ class PagesController < ApplicationController
     @text = "Немного текста"
   end
 
-  def contacts
-    @heading = "Контакты"
-    @text = "Наши контакты"
-  end
+  # def contacts
+  #   @heading = "Контакты"
+  #   @text = "Наши контакты"
+  # end
 
 end
