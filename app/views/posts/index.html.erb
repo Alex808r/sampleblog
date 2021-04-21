@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title> Главная страница </title>
-    </head>
-<body>
-<h3> Главная страница </h3>
-</body>
-</html>
+<h1> Все посты </h1>
+
+<% @posts.each do |post| %>
+  <h4><%= post.title %></h4>
+  <p> <%= post.body %></p>
+  <hr/>
+<% end %>
