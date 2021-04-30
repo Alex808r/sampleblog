@@ -2,11 +2,13 @@
 
 <% @posts.each do |post| %>
   <div class="alert-alert-light">
+
     <h4><%= post.title %></h4>
     <p> <%= post.body %></p>
     <%= link_to "Читать далее", post_path(post), :class => 'btn btn-outline-primary' %>
     <hr/>
   </div>
+
 <% end %>
 
 
