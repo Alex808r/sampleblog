@@ -3,9 +3,9 @@
 <hr/>
 <%= link_to "Редактировать", edit_post_path(@post), :class => 'btn btn-warning' %>
 <%= link_to "Удалить", post_path(@post), method: :delete, data: {confirm:"Удалить?"}, :class => 'btn btn-danger' %>
-
-<h4> Комментарии </h4>
-
+<p>
+<h5> Комментарии </h5>
+</p>
 <hr/>
 <% @post.comments.each do |comment| %>
   <div class="alert-alert-light">
@@ -31,9 +31,10 @@
   </p>
   <p>
     Текст комментария <br>
+
     <%= form.text_area(:body, {:class=>'form-control'}) %>
   </p>
   <p>
-    <%= form.submit('Добавить комментарий', {:class=>'btn btn-warning'}) %>
+    <%= form.submit('Добавить комментарий', {:class=>'btn btn-primary'}) %>
   </p>
 <%end %>
